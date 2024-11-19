@@ -9,6 +9,9 @@ export default function Home() {
       <Link href="/about" className="text-blue-500 hover:underline">
         About Us 页面
       </Link>
+      <Link href="/posts" className="text-green-500 hover:underline">
+        posts 页面
+      </Link>
     </main>
   );
 }
