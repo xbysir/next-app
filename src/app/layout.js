@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <Link href={'/about'}>About</Link>
           </ul>
         </nav>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );
