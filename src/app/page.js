@@ -6,6 +6,9 @@ export default function Home() {
       <p className="text-xl">
         This is just the beginning of something amazing.
       </p>
+      <Link href="/login" className="text-green-500 hover:underline">
+        跳转登录页面
+      </Link>
       <Link href="/about" className="text-blue-500 hover:underline">
         跳转About Us 页面
       </Link>

@@ -19,6 +19,7 @@ export const metadata = {
   description: '我的next项目',
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
