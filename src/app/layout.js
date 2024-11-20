@@ -21,7 +21,6 @@ export const metadata = {
 };
 console.log('在服务端打印了>>>→➡️➡️➡️');
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
