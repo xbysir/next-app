@@ -1,8 +1,8 @@
+import { Suspense } from 'react';
 import localFont from 'next/font/local';
 import '../styles/globals.css';
 import Loading from '@/components/Loading';
-import { Suspense } from 'react';
-import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 const geistSans = localFont({
   src: '../styles/fonts/GeistVF.woff',
@@ -23,18 +23,11 @@ console.log('在服务端打印了>>>→➡️➡️➡️');
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  h-full w-full`}
       >
-        <nav>
-          <ul className="flex gap-2 justify-between px-4 bg-blue-700">
-            <li>
-              <Link href={'/'}>Home</Link>
-            </li>
-            <Link href={'/about'}>About</Link>
-          </ul>
-        </nav>
+        <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
