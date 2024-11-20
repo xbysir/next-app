@@ -1,29 +1,14 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import Todos from '@/components/Todos';
+export const metadata = {
+  title: '关于',
+  description: '关于我们',
+};
 
-const About = () => {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/v1/getList');
-      const data = await res.json();
-      setTodos(data.data.list);
-    };
-    fetchData();
-  }, []);
-
+export default function About() {
   return (
     <div>
       <h1>Todo List</h1>
-
-      <ul>
-        {todos.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <Todos />
     </div>
   );
-};
-
-export default About;
+}
