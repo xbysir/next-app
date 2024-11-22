@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import useUserStore from '@/store/user';
+import { Pagination, Input } from 'antd';
+
 export default function Todos() {
   const [todos, setTodos] = useState([]);
   const { userInfo, token, updateUserInfo, updateAge, updateToken } =
@@ -17,6 +19,8 @@ export default function Todos() {
 
   return (
     <>
+      <Input placeholder="Basic usage" />
+      <Pagination defaultCurrent={1} total={50} />
       <ul>
         {todos.map((item, index) => (
           <li key={index}>{item}</li>

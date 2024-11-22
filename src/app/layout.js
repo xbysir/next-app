@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import '../styles/globals.css';
 import Loading from '@/components/Loading';
 import Navbar from '@/components/Navbar';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 const geistSans = localFont({
   src: '../styles/fonts/GeistVF.woff',
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased  h-full w-full`}
       >
         <Navbar />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>
+          <AntdRegistry>{children}</AntdRegistry>
+        </Suspense>
       </body>
     </html>
   );
