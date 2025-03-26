@@ -1,10 +1,15 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const noNavPaths = ['/login', '/register'];
+
+  if (noNavPaths.includes(pathname)) return null;
   return (
-    <footer className="bg-white border-t">
+    <footer className="bg-slate-50 border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
