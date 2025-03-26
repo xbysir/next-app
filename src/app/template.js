@@ -12,7 +12,7 @@ export default function Template({ children }) {
     <div
       className="template w-full"
       style={{
-        height: isFullHeight ? '100%' : 'calc(100% - 4rem)',
+        height: isFullHeight ? '100%' : 'calc(100% - 60px)',
       }}
     >
       <Suspense fallback={<Loading />}>{children}</Suspense>

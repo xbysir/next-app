@@ -2,7 +2,8 @@ import { Suspense } from 'react';
 import localFont from 'next/font/local';
 import '../styles/globals.css';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 const geistSans = localFont({
@@ -20,7 +21,6 @@ export const metadata = {
   title: 'next app',
   description: '我的next项目',
 };
-console.log('在服务端打印了>>>→➡️➡️➡️');
 
 export default function RootLayout({ children }) {
   return (
@@ -28,10 +28,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  h-full w-full`}
       >
-        <Navbar />
-        <Suspense fallback={<Loading />}>
-          <AntdRegistry>{children}</AntdRegistry>
-        </Suspense>
+        <Header />
+        <main>
+          <Suspense fallback={<Loading />}>
+            <AntdRegistry>{children}</AntdRegistry>
+          </Suspense>
+        </main>
+        <Footer />
       </body>
     </html>
   );
